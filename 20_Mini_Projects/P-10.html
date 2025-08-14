@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Library</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    input {
+        height: 35px;
+        width: 14rem;
+        border: 0.1px solid grey;
+        padding: 4px;
+        border-radius: 7px;
+        margin: 7px;
+    }
+
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+    }
+
+    button:hover {
+        background-color: rgb(33, 180, 33);
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <h1>Function Library</h1>
+    <input type="text" id="n1" placeholder="Enter first number">
+    <input type="text" id="n2" placeholder="Enter second number">
+    <button id="sum">Calculate Sum</button>
+    <button id="pro">Calculate Product</button>
+    <button id="diff">Calculate Difference</button>
+    <button id="clear">Clear</button>
+
+    <p id="result">Result : </p>
+    <script>
+        //accessing all the buttons and input values
+        const sum=document.getElementById("sum")
+        const pro=document.getElementById("pro")
+        const diff=document.getElementById("diff")
+        const num1=document.getElementById("n1")
+        const num2=document.getElementById("n2")
+        const clear=document.getElementById("clear")
+        const result=document.getElementById("result")
+
+        
+        // using the functions 
+        function Sum(a,b){
+            return a+b
+        }
+        function Product(a,b){
+            return a*b
+        }
+        function Difference(a,b){
+            return a-b
+        }
+        
+        //using onclick methods for each of the buttons
+        //for sum
+        sum.onclick=function(){
+            const n1=parseInt(num1.value);
+            const n2=parseInt(num2.value);
+            if(isNaN(n1)||isNaN(n2)||n1<0||n2<0){
+                result.textContent="Please Enter a Valid Non-Negative Number";
+            }
+            else{
+            result.textContent="Sum of "+n1+" and "+n2+" is "+Sum(n1,n2);
+        }}
+
+        // for product
+        pro.onclick=function(){
+            const n1=parseInt(num1.value);
+        const n2=parseInt(num2.value);
+            if(isNaN(n1)||isNaN(n2)||n1<0||n2<0){
+                result.textContent="Please Enter a Valid Non-Negative Number";
+            }
+            else{
+            result.textContent="Product of "+n1+" and "+n2+" is "+Product(n1,n2);
+        }}
+
+        // for difference
+        diff.onclick=function(){
+            const n1=parseInt(num1.value);
+        const n2=parseInt(num2.value);
+            if(isNaN(n1)||isNaN(n2)||n1<0||n2<0){
+                result.textContent="Please Enter a Valid Non-Negative Number";
+            }
+            else{
+            result.textContent="Difference of "+n1+" and "+n2+" is "+Difference(n1,n2);
+        }}
+
+        // to clear values
+        clear.onclick=function(){
+        num1.value=0;
+        num2.value=0;
+        result.textContent="Result :"    
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Hover</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+    p{
+        color: black;
+    }
+</style>
+<body>
+    <h1>Mouse Hover Effect</h1>
+    <p id="result">Hover over this text to change its color!</p>
+
+    <script>
+        const result=document.getElementById("result");
+
+        result.addEventListener("mouseover",()=>{
+            result.style.color="Blue"
+        })
+        result.addEventListener("mouseout",()=>{
+            result.style.color="Black"
+        })
+    </script>
+</body>
+</html>

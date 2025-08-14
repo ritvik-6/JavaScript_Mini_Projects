@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+    }
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+        width: auto;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: rgb(31, 184, 31);
+    }
+</style>
+<body>
+    <h1>Click Counter</h1>
+    <button id="btn">Click Me!</button>
+    <p id="result">Count : 0</p>
+
+    <script>
+        const btn=document.getElementById("btn")
+        const result=document.getElementById("result")
+        let c=0
+        btn.addEventListener("click",()=>{
+            c++
+            result.textContent="Clicks : "+ c;
+        })
+    </script>
+</body>
+</html>

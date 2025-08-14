@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Generator</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+    }
+
+    button:hover {
+        background-color: rgb(33, 180, 33);
+        cursor: pointer;
+    }
+
+    #list>ul>li {
+        list-style: none;
+    }
+</style>
+
+<body>
+    <h1>Number List Generator</h1>
+    <button id="btn">Generate</button>
+    <div id="list">
+
+    </div>
+    <script>
+        const btn = document.getElementById('btn')
+        const list = document.getElementById('list')
+        btn.onclick = function () {
+            list.innerHTML = '';
+            const ul = document.createElement('ul');
+            for (let i = 1; i <= 10; i++) {
+                const li = document.createElement('li');
+                li.textContent = i;
+                ul.appendChild(li);
+            }
+            list.appendChild(ul);
+        };
+    </script>
+</body>
+
+</html>

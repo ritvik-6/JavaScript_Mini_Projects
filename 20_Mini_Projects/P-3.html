@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Adder</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    h1 {
+        position: relative;
+        text-align: center;
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input {
+        margin: 4px;
+        padding: 7px;
+    }
+
+    button {
+        margin-top: 10px;
+        color: white;
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 10px;
+    }
+    button:hover{
+        background-color: rgb(33, 180, 33);
+        cursor: pointer;
+    }
+    p{
+        font-size: 1.5rem;
+    }
+</style>
+
+<body>
+    <h1>Number Adder </h1>
+    <div class="box">
+        <input type="text" name="" id="n1" placeholder="Enter number 1">
+        <input type="text" name="" id="n2" placeholder="Enter number 2">
+        <button id="final">Add Numbers</button>
+        <p id="result">Result:</p>
+    </div>
+    <script>
+        const button=document.getElementById('final')
+        const input1=document.getElementById('n1')
+        const input2=document.getElementById('n2')
+        const results=document.getElementById('result')
+        button.onclick=function(){
+            const n1=parseInt(input1.value)
+            const n2=parseInt(input2.value)
+            if(isNaN(n1) || isNaN(n2)){
+                results.textContent="Please enter valid numbers"
+            }
+            else{
+                const result=n1+n2;
+                results.textContent="Result : "+result;
+            }
+        };
+    </script>
+</body>
+</html>

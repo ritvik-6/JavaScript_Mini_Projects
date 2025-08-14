@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheet - 1</title>
+    <style>
+        *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+        h1 {
+            position: relative;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+            color: white;
+            background-color: rgb(29, 212, 59);
+            border: 0;
+            border-radius: 4px;
+            padding: 10px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: rgb(47, 185, 47);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Welcome to JavaScript
+    </h1>
+    </div>
+    <center>
+        <button id="b1">
+            Click Me!
+        </button>
+    </center>
+    <script>
+        const button = document.getElementById('b1')
+        button.onclick = function () {
+            alert('Hello, World!');
+        }; 
+    </script>
+</body>
+
+</html>

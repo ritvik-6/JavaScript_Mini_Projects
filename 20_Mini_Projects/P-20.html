@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Parser</title>
+</head>
+<style>
+* {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        align-self: center;
+        height: 100vh;
+    }
+
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+        width: auto;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(31, 184, 31);
+    }
+</style>
+<body>
+    <h1>JSON Parser</h1>
+    <p>Enter a JSON String ,example:{"Name":"Kritik","Age":14}</p>
+    <textarea name="text" id="text" rows="7" cols="50">
+    </textarea>
+    <button id="btn">Parse JSON</button>
+    <div id="container"></div>
+
+    <script>
+        const btn=document.getElementById("btn")
+        const textinput=document.getElementById("text")
+        const container=document.getElementById("container")
+
+
+        btn.onclick=()=>{
+            const input=textinput.value.trim();
+            if(input===""){
+                alert('Enter a valid JSON String')
+                return
+            }
+            try{
+                const parsed=JSON.parse(input);
+                container.innerHTML=' '
+
+                for(let key in parsed){
+                    const p=document.createElement('p')
+                    p.textContent=`${key} : ${parsed[key]}`
+                    container.appendChild(p)
+                }
+            }catch(error){
+                container.textContent="Invalid JSON try again"
+            }
+        }
+    </script>
+</body>
+</html>

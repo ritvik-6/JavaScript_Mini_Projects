@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Colour Generator</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+        height: 100vh;
+        transition: background-color .5s cubic-bezier(0, 0, 0.37, -0.17);
+    }
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+    }
+    button:hover{
+        background-color: rgb(33, 180, 33);
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1>Random Colour Changer</h1>
+    <button id="btn">Change Colour</button>
+<!-- javascript -->
+    <script>
+        const btn=document.getElementById('btn');
+        function colorgen(c){
+            let r=Math.floor(Math.random()*256)
+            let g=Math.floor(Math.random()*256)
+            let b=Math.floor(Math.random()*256)
+         return c=`rgb(${r},${g},${b})`
+        }
+        btn.onclick=function(){
+            document.body.style.backgroundColor=colorgen();
+        }
+    </script>
+</body>
+</html>

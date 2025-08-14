@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Object display</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        align-self: center;
+        height: 100vh;
+    }
+
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+        width: auto;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(31, 184, 31);
+    }
+
+    table {
+        width: 300px;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: rgb(48, 146, 48);
+        color: white;
+        padding: 4px;
+    }
+
+    th,
+    td {
+        border: 1px solid grey;
+        text-align: start;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <h1>User Object Display</h1>
+    <button id="btn">Show User Details</button>
+    <div id="tablecontainer"></div>
+    <script>
+        const btn = document.getElementById("btn")
+        const container = document.getElementById("tablecontainer")
+
+        const Object = {
+            Name: "Ritvik",
+            Age: 19,
+            Email: "gangaritvik@gmail.com"
+        }
+        btn.onclick = function () {
+            container.innerHTML = ''
+            const table = document.createElement('table')
+            const headrow = document.createElement('tr')
+            const h1 = document.createElement('th')
+            const h2 = document.createElement('th')
+
+            h1.textContent = "Property"
+            h2.textContent = "Value"
+            headrow.appendChild(h1)
+            headrow.appendChild(h2)
+            table.appendChild(headrow)
+
+            for (let key in Object) {
+                const row = document.createElement('tr')
+                const val1 = document.createElement('td')
+                const val2 = document.createElement('td')
+
+                val1.textContent = key;
+                val2.textContent = Object[key];
+                row.appendChild(val1)
+                row.appendChild(val2)
+                table.appendChild(row)
+
+            }
+            container.appendChild(table)
+        }
+    </script>
+</body>
+
+</html>

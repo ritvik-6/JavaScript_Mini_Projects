@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorter</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2px;
+        align-self: center;
+        height: 100vh;
+    }
+
+    input {
+        padding: 10px;
+        margin: 8px;
+        color: black;
+    }
+
+    input::placeholder {
+        color: grey;
+    }
+
+    button {
+        margin-top: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(29, 212, 59);
+        border: 0;
+        border-radius: 4px;
+        padding: 15px;
+        width: auto;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: rgb(31, 184, 31);
+    }
+
+</style>
+<body>
+    <h1>Array Sorter</h1>
+    <p>Please Enter the values seperated by comma (,)</p>
+    <input type="text" placeholder="Enter the values" id="input">
+    <button id="btn">Sort Numbers</button>
+    <p id="result">Sorted : </p>
+
+
+    <script>
+        const btn=document.getElementById('btn')
+        const input=document.getElementById('input')
+        const result=document.getElementById('result')
+        
+        btn.addEventListener('click',function(){
+            const values=input.value.trim();
+            if(values===''){
+                result.textContent='Enter values'
+                alert('Enter values!')
+                return;
+            }
+            const numbers=values.split(',').map(item=>parseInt(item.trim()))
+
+            if(numbers.some(isNaN)){
+                alert('Please enter valid numbers')
+                return
+            }
+            const sortednums=numbers.sort((a,b)=>a-b);
+            result.textContent="Sorted : "+sortednums.join(',');
+
+        })
+    </script>
+</body>
+</html>
